@@ -1,0 +1,35 @@
+syms i it t VC VR
+it=dsolve('1e3*1e-6*Dit+it-1e-6*diff((heaviside(t)-heavisỉde(t-2e-3)+heaviside(t-4e-3)-heaviside(t-6e-3)+heaviside(t-8e-3)-heaviside(t-10e-3)),t)','it(0)=0.5e-3');
+VR = it*1e3;
+vc = (heaviside(t)-heaviside(t-2e-3)+heaviside(t-4e-3)-heaviside(t-6e-3)+heaviside(t-8e-3)-heaviside(t-lOe-3))-VR;
+
+figure(1), grid on, hold on, 
+subplot(2,2,1), grid on, hold on,
+hl1 = ezplot(heaviside(t)-heaviside(t-2e-3)+heaviside(t-4e-3)-heaviside(t-6e-3)+heaviside(t-8e-3)-heaviside(t-10e-3),[0 12e-3]) 
+axl = gca;
+set(axl, [0 0.012]);
+set(axl, [-0.1 1.1]);
+set(ax1,'XColor','k','YColor','k');
+set(get(ax1,'XLabel'),'String','Thoi gian - s', 'FontSize', 14);
+set(get(ax1,'YLabel'),'String','Dien ap - V', 'FontSize', 14);
+set(get(axl,'title') ,'String','Dien ap vao','FontSize' , 14);
+set(axl,'FontSize', 10);
+set(ax1,'Box','On');
+set(hl1,'LineWidth',3);
+set(hl1,'LineStyle','-');
+set(hl1,'Color','b');
+
+subplot(2,2,2), grid on, hold on,
+hl1 = ezplot(it,[0 12e-3]) 
+axl = gca;
+set(axl, [0 0.012]);
+set(axl, [-0.1 1.1]);
+set(ax1,'XColor','k','YColor','k');
+set(get(ax1,'XLabel'),'String','Thoi gian - s', 'FontSize', 14);
+set(get(ax1,'YLabel'),'String','DDong dien - A', 'FontSize', 14);
+set(get(axl,'title') ,'String','DDong dien chay qua mach','FontSize' , 14);
+set(axl,'FontSize', 10);
+set(ax1,'Box','On');
+set(hl1,'LineWidth',3);
+set(hl1,'LineStyle','-');
+set(hl1,'Color','b');
