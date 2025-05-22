@@ -3,7 +3,7 @@ syms it t R L Vi
 
 % Giải phương trình vi phân: L*Dit + R*it = Vi
 Dit = diff(it,t);
-it = dsolve(L*Dit + R*it == Vi, it(0)==0);
+it = dsolve('L*Dit + R*it == Vi', 'it(0)==0');
 vt = L*diff(it,t);   % điện áp qua cuộn cảm
 
 % --- Figure 1: Dòng điện ---
